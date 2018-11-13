@@ -5,6 +5,10 @@
 version: 2
 jobs:
   build:
+    branches:
+      only:
+        - master
+        - run-minio-on-circleci
     docker:
       - image: circleci/python:3.6.7-node-browsers
         ports: 9988:9988
