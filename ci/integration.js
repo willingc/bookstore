@@ -29,6 +29,7 @@ const sleep = timeout =>
 const main = async () => {
   console.log("genToken now...");
   const jupyterToken = await genToken();
+  console.log("jupyterToken: ", jupyterToken);
   console.log("set juptyer port");
   const jupyterPort = 9988;
 
@@ -129,7 +130,7 @@ const main = async () => {
     },
     headers: {
       "Content-Type": "application/json",
-      Authorization: `token ${jupyterToken}`
+      Authorization: `${jupyterToken}`
     }
   }).toPromise();
 
