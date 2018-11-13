@@ -27,11 +27,13 @@ const sleep = timeout =>
   new Promise((resolve, reject) => setTimeout(resolve, timeout));
 
 const main = async () => {
+  console.log("genToken now...");
   const jupyterToken = await genToken();
+  console.log("set juptyer port");
   const jupyterPort = 9988;
 
   const jupyterEndpoint = `http://127.0.0.1:${jupyterPort}`;
-
+  console.log("going to use ", jupyterEndpoint);
   console.log("launching in ", __dirname);
 
   const jupyter = child_process.spawn(
