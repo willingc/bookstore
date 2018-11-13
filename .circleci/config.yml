@@ -47,6 +47,11 @@ jobs:
           command: |
             python3 -m venv venv2
             . venv2/bin/activate
-            python -m pip install -U --force-reinstall dist/bookstore*.whl
+            python3 -m pip install -U --force-reinstall dist/bookstore*.whl
+
+            which jupyter
+
+            /home/circleci/repo/venv2/bin/python --version
+
             npm i
             node ci/integration.js
