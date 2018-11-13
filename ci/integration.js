@@ -28,7 +28,7 @@ const sleep = timeout =>
 
 const main = async () => {
   const jupyterToken = await genToken();
-  const jupyterPort = 8970 + Math.floor(10 * Math.random());
+  const jupyterPort = 9988;
 
   const jupyterEndpoint = `http://127.0.0.1:${jupyterPort}`;
 
