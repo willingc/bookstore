@@ -6,9 +6,7 @@ version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
-      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
-      - image: circleci/python:3.6.1
+      - image: circleci/python:3.6.7-node-browsers
 
       - image: minio/minio:RELEASE.2018-11-06T01-01-02Z
         command: server /data
@@ -24,9 +22,9 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "requirements.txt" }}
+          - v2-dependencies-{{ checksum "requirements.txt" }}-{{ checksum "requirements-dev.txt"}}
           # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+          - v2-dependencies-
 
       - run:
           name: install dependencies
@@ -35,8 +33,20 @@ jobs:
             . venv/bin/activate
             pip install -r requirements.txt
             pip install -r requirements-dev.txt
+            pip install wheel
+            # Package up the package
+            python setup.py sdist bdist_wheel
 
       - save_cache:
           paths:
             - ./venv
-          key: v1-dependencies-{{ checksum "requirements.txt" }}-{{ checksum "requirements-dev.txt" }}
+          key: v2-dependencies-{{ checksum "requirements.txt" }}-{{ checksum "requirements-dev.txt" }}
+
+      - run:
+          name: integration tests
+          command: |
+            python3 -m venv venv2
+            . venv2/bin/activate
+            python -m pip install -U --force-reinstall dist/bookstore*.whl
+            npm i
+            node ci/integration.js
