@@ -130,7 +130,7 @@ const main = async () => {
     },
     headers: {
       "Content-Type": "application/json",
-      Authorization: `${jupyterToken}`
+      Authorization: `token ${jupyterToken}`
     }
   }).toPromise();
 
