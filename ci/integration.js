@@ -43,6 +43,7 @@ const main = async () => {
       "--no-browser",
       `--NotebookApp.token=${jupyterToken}`,
       `--NotebookApp.disable_check_xsrf=True`,
+      `--ip=127.0.0.1`,
       `--port=${jupyterPort}`
     ],
     { cwd: __dirname }
