@@ -24,18 +24,18 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v2-dependencies-{{ checksum "requirements.txt" }}-{{ checksum "requirements-dev.txt"}}
-          # fallback to using the latest cache if no exact match is found
-          - v2-dependencies-
+            - v2-dependencies-{{ checksum "requirements.txt" }}-{{ checksum "requirements-dev.txt"}}
+            # fallback to using the latest cache if no exact match is found
+            - v2-dependencies-
 
       - run:
           name: install dependencies
           command: |
             python3 -m venv venv
             . venv/bin/activate
+            pip install --upgrade pip setuptools wheel
             pip install -r requirements.txt
             pip install -r requirements-dev.txt
-            pip install wheel
             # Package up the package
             python setup.py sdist bdist_wheel
 
@@ -47,13 +47,14 @@ jobs:
       - run:
           name: integration tests
           command: |
-            python3 -m venv venv2
-            . venv2/bin/activate
-            python3 -m pip install -U --force-reinstall dist/bookstore*.whl
+            python3 -m venv venv_tests
+            . venv_tests/bin/activate
+            pip install --upgrade pip setuptools wheel
+            pip install -U --force-reinstall dist/bookstore*.whl
 
             which jupyter
 
-            /home/circleci/repo/venv2/bin/python --version
+            /home/circleci/repo/venv_tests/bin/python --version
 
             npm i
             node ci/integration.js
