@@ -20,8 +20,8 @@ from setuptools import setup
 
 v = sys.version_info
 
-if v[:2] < (3, 6):
-    print('ERROR: Bookstore requires Python 3.6 or higher', file=sys.stderr)
+if v[:2] < (3, 5):
+    print('ERROR: Bookstore requires Python 3.5 or higher', file=sys.stderr)
     sys.exit(1)
 
 # We have the correct Python version, proceed.
