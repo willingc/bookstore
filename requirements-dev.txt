@@ -6,3 +6,5 @@ pytest>=3.3
 pytest-cov
 pytest-mock
 black; python_version >= '3.6'
+-e git://github.com/boto/botocore.git@develop#egg=botocore
+-e git://github.com/aio-libs/aiobotocore.git@master#egg=aiobotocore
