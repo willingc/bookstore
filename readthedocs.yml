@@ -3,6 +3,7 @@ type: sphinx
 requirements_file: docs/requirements-doc.txt
 python:
   version: 3
+  setup_py_install: true
 formats:
   - htmlzip
   - epub
