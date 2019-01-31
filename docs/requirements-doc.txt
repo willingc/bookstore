@@ -1,4 +1,4 @@
 sphinx
 recommonmark
 m2r
-pip install .
+.
