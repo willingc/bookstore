@@ -1,4 +1,3 @@
 sphinx
 recommonmark
 m2r
-.
