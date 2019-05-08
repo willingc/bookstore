@@ -73,7 +73,7 @@ setup(
         'notebook',
         's3fs',
         'tornado >= 5.1.1',
-        'aiobotocore>=0.10.0',
+        'aiobotocore',
         'aioboto3',
     ],
     extras_require={
@@ -86,7 +86,13 @@ setup(
             'pytest-cov',
             'pytest-mock',
             'black',
-        ]
+        ],
+        'doc': [
+            'sphinx',
+            'recommonmark',
+            'm2r',
+            'sphinxcontrib-napoleon',
+        ],
     },
     data_files=data_files,
     entry_points={},

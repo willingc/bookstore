@@ -4,5 +4,5 @@ ipython >= 5.0
 notebook
 s3fs
 tornado >= 5.1.1
+aiobotocore
 aioboto3
-aiobotocore>=0.10.0
