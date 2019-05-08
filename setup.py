@@ -75,7 +75,6 @@ setup(
         'tornado >= 5.1.1',
         'aiobotocore',
         'aioboto3',
-        'boto3==1.9.91',
     ],
     extras_require={
         'test': [
@@ -93,6 +92,7 @@ setup(
             'recommonmark',
             'm2r',
             'sphinxcontrib-napoleon',
+            'boto3==1.9.91',
         ],
     },
     data_files=data_files,
