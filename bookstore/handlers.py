@@ -1,17 +1,15 @@
 """Handlers for Bookstore API"""
 import json
 
-from notebook.base.handlers import APIHandler
-from notebook.base.handlers import path_regex
+from notebook.base.handlers import APIHandler, path_regex
 from notebook.utils import url_path_join
 from tornado import web
 
+from . import EXT_NAME, PACKAGE_DIR
 from ._version import __version__
-from .bookstore_config import BookstoreSettings
-from .bookstore_config import validate_bookstore
-from .publish import BookstorePublishHandler
+from .bookstore_config import BookstoreSettings, validate_bookstore
 from .clone import BookstoreCloneHandler
-
+from .publish import BookstorePublishHandler
 
 version = __version__
 
@@ -19,7 +17,8 @@ version = __version__
 class BookstoreVersionHandler(APIHandler):
     """Handler responsible for Bookstore version information
 
-    Used to lay foundations for the bookstore package. Though, frontends can use this endpoint for feature detection.
+    Used to lay foundations for the bookstore package.
+    Though, front-ends can use this endpoint for feature detection.
     """
 
     @web.authenticated
@@ -41,6 +40,9 @@ class BookstoreVersionHandler(APIHandler):
 
 
 def load_jupyter_server_extension(nb_app):
+    """Load the bookstore server extension."""
+    nb_app.log.info(f'{EXT_NAME} extension loaded from {PACKAGE_DIR}')
+
     web_app = nb_app.web_app
     host_pattern = '.*$'
 
