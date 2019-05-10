@@ -45,3 +45,7 @@ To do so you run: ``jupyter serverextension enable --py bookstore``.
 If you wish to enable it only for your current environment, run:
 
 ``jupyter serverextension enable --py bookstore --sys-prefix``.
+
+To check if the ``serverextension`` is installed, run:
+
+``jupyter serverextension list``
