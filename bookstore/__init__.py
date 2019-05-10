@@ -1,14 +1,9 @@
-import os
-
-PACKAGE_DIR: str = os.path.realpath(os.path.dirname(__file__))
-
-del os
-
-from .archive import BookstoreContentsArchiver
+from ._version import __version__, version_info
+from .archive import ArchiveRecord, BookstoreContentsArchiver
 from .bookstore_config import BookstoreSettings
-from .handlers import load_jupyter_server_extension
-from ._version import __version__
-from ._version import version_info
+from .clone import BookstoreCloneHandler
+from .handlers import BookstoreVersionHandler, load_jupyter_server_extension
+from .publish import BookstorePublishHandler
 
 
 def _jupyter_server_extension_paths():
