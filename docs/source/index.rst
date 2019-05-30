@@ -20,7 +20,7 @@ Table of Contents
    installation
    configuration
    usage
-   restapi/openapi
+   openapi
    reference/bookstore
    project/index
    changelog
