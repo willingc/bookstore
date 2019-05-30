@@ -46,6 +46,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.napoleon',
     'sphinxcontrib.openapi',
+    'sphinxcontrib.redoc',
     'm2r',
 ]
 
@@ -74,6 +75,21 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
 
+redoc = [
+    {'name': 'Bookstore API', 'page': 'api', 'spec': 'bookstore_api.yaml', 'embed': True},
+    {
+        'name': 'Example API',
+        'page': 'example/index',
+        'spec': 'http://example.com/openapi.yml',
+        'opts': {
+            'lazy': False,
+            'nowarnings': False,
+            'nohostname': False,
+            'required-props-first': True,
+            'expand-responses': [200, 201],
+        },
+    },
+]
 
 # -- Options for HTML output -------------------------------------------------
 
