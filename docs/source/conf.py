@@ -78,7 +78,7 @@ pygments_style = None
 redoc = [
     {
         'name': 'Bookstore API',
-        'page': 'interactiveapi',
+        'page': 'api',
         'spec': 'bookstore_api.yaml',
         'opts': {'lazy-rendering': True},
     }
