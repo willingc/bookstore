@@ -76,20 +76,14 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 pygments_style = None
 
 redoc = [
-    {'name': 'Bookstore API', 'page': 'api', 'spec': 'bookstore_api.yaml', 'embed': True},
     {
-        'name': 'Example API',
-        'page': 'example/index',
-        'spec': 'http://example.com/openapi.yml',
-        'opts': {
-            'lazy': False,
-            'nowarnings': False,
-            'nohostname': False,
-            'required-props-first': True,
-            'expand-responses': [200, 201],
-        },
-    },
+        'name': 'Bookstore API',
+        'page': 'interactiveapi',
+        'spec': 'bookstore_api.yaml',
+        'opts': {'lazy-rendering': True},
+    }
 ]
+
 
 # -- Options for HTML output -------------------------------------------------
 
