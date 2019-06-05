@@ -115,7 +115,9 @@ html_static_path = ['_static']
 # default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
 # 'searchbox.html']``.
 #
-html_sidebars = {'**': ['about.html', 'searchbox.html', 'navigation.html', 'sourcelink.html']}
+html_sidebars = {
+    '**': ['about.html', 'searchbox.html', 'navigation.html', 'sourcelink.html']
+}
 
 
 # -- Options for HTMLHelp output ---------------------------------------------
@@ -193,3 +195,4 @@ epub_exclude_files = ['search.html']
 
 
 # -- Extension configuration -------------------------------------------------
+
