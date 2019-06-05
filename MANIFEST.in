@@ -18,6 +18,7 @@ include .coveragerc
 include README.md
 include LICENSE
 include MANIFEST.in
+include .readthedocs.yml
 include *.md
 include *.toml
 include *.example
@@ -38,5 +39,4 @@ graft scripts
 prune .tox
 prune .flake8
 prune .circleci
-prune .readthedocs.yml
 prune .precommit-config.yaml
