@@ -1,4 +1,4 @@
-sphinx
+sphinx==1.8.1  # temporary until Sphinx 2.x autodoc works reliably
 recommonmark
 m2r
 sphinxcontrib-napoleon

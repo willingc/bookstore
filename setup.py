@@ -78,7 +78,7 @@ setup(
     ],
     extras_require={
         'docs': [
-            'sphinx>=2.0',
+            'sphinx==1.8.1',
             'recommonmark',
             'm2r',
             'sphinxcontrib-napoleon',
