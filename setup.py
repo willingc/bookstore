@@ -78,13 +78,13 @@ setup(
     ],
     extras_require={
         'docs': [
-            'sphinx>=2.0',
-            'recommonmark',
-            'm2r',
+            'sphinx==1.8',
+            #'recommonmark',
+            #'m2r',
             'sphinxcontrib-napoleon',
-            'sphinxcontrib-openapi',
-            'boto3==1.9.91',
-            'botocore>=1.12.91,<1.12.92',
+            #'sphinxcontrib-openapi',
+            #'boto3==1.9.91',
+            #'botocore>=1.12.91,<1.12.92',
         ],
         'test': [
             'codecov',
