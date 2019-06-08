@@ -15,7 +15,7 @@
 import os
 import sys
 
-# import m2r
+import m2r
 
 sys.path.insert(0, os.path.abspath('..'))
 
@@ -46,7 +46,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.napoleon',
     'sphinxcontrib.openapi',
-    #    'm2r',
+    'm2r',
 ]
 
 # Add any paths that contain templates here, relative to this directory.

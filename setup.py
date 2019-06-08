@@ -80,7 +80,7 @@ setup(
         'docs': [
             'sphinx==1.8',
             #'recommonmark',
-            #'m2r',
+            'm2r',
             'sphinxcontrib-napoleon',
             'sphinxcontrib-openapi',
             #'boto3==1.9.91',
