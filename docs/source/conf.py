@@ -45,7 +45,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
     'sphinx.ext.napoleon',
-    #'sphinxcontrib.openapi',
+    'sphinxcontrib.openapi',
     #    'm2r',
 ]
 

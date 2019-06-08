@@ -82,7 +82,7 @@ setup(
             #'recommonmark',
             #'m2r',
             'sphinxcontrib-napoleon',
-            #'sphinxcontrib-openapi',
+            'sphinxcontrib-openapi',
             #'boto3==1.9.91',
             #'botocore>=1.12.91,<1.12.92',
         ],
